@@ -16,16 +16,25 @@
   <body>
     <div class="container">
       <div class="boards">
-        <div class="board">
+        <div class="board-1">
           <div class="b-header">
             "To do"
             <div>
               <span class="count" id="todo count">1</span>
             </div>
           </div>
-          <div class="cards">
-            <div class="card">
-              <div class="done">
+          <div
+            class="cards"
+            ondragover="allowDrop(event)"
+            ondrop="drop(event)"
+          >
+            <div
+              class="card"
+              draggable="true"
+              ondragstart="drag(event)"
+              id="card-1"
+            >
+              <!-- <div class="done">
                 <i class="fa-solid fa-check"></i>
               </div>
               <div class="main">
@@ -40,45 +49,60 @@
                 <div class="done">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </div>
+              </div> -->
+            </div>
+            <div
+              class="card"
+              draggable="true"
+              ondragstart="drag(event)"
+              id="card-2"
+            >
+              <!-- <div class="done">
+                <i class="fa-solid fa-check"></i>
               </div>
+              <div class="main">
+                <h1>to do</h1>
+                <p>hiih zuilee bichne</p>
+                <div class="prioity">low</div>
+              </div>
+              <div class="action">
+                <div class="done">
+                  <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="done">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+              </div> -->
             </div>
           </div>
-          <div class="add-card">
-            <i class="fa-solid fa-plus"></i>
-            <div>Add card</div>
+          <button><i class="fa-solid fa-plus"></i>Add card</button>
+          <div class="modalContainer">
+            <div class="modal">
+              <h2>Add Task</h2>
+              <p>title</p>
+              <input type="text" id="title-input" />
+              <p>description</p>
+              <input type="text" id="description-input" />
+              <p>status</p>
+              <input type="text" id="status-input" />
+              <p>priority</p>
+              <input type="text" id="priority-input" />
+              <button onclick="addTodo()">Add task</button>
+            </div>
           </div>
         </div>
-        <div class="board">
+        <div class="board-2">
           <div class="b-header">
             To do
             <div>
               <span class="count" id="todo count">1</span>
             </div>
           </div>
-          <div class="add-card">
-            <i class="fa-solid fa-plus"></i>
-            <div>Add card</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="b-header">
-            To do
-            <div>
-              <span class="count" id="todo count">1</span>
-            </div>
-          </div>
-          <div class="add-card">
-            <i class="fa-solid fa-plus"></i>
-            <div>Add card</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="b-header">
-            To do
-            <div>
-              <span class="count" id="todo count">1</span>
-            </div>
-          </div>
+          <div
+            class="cards"
+            ondragover="allowDrop(event)"
+            ondrop="drop(event)"
+          ></div>
           <div class="add-card">
             <i class="fa-solid fa-plus"></i>
             <div>Add card</div>

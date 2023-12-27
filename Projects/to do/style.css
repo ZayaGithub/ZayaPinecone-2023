@@ -19,7 +19,7 @@ body {
   gap: 16px;
   display: flex;
 }
-.board {
+.board-flex {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -39,4 +39,10 @@ body {
   justify-content: space-between;
   background: white;
   border-radius: 8px;
+}
+
+
+
+.show {
+  display: flex;
 }
