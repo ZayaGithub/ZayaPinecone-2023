@@ -1,0 +1,172 @@
+/* Change button background */
+/* body {
+  gap: 20px;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.box-1 {
+  width: 150px;
+  height: 50px;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 1s ease;
+  cursor: crosshair;
+}
+.box-1:hover {
+  background-color: greenyellow;
+}
+.box-2 {
+  width: 150px;
+  height: 50px;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.1s linear;
+  cursor: grab;
+}
+.box-2:hover {
+  background-color: greenyellow;
+} */
+
+/* Change shape 
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  transition: all 2s ease;
+  transition: all 1s ease;
+  transition: all 3s ease;
+  transition: all 1s ease;
+}
+.box:hover {
+  border-radius: 50%;
+  transform: rotate(360deg);
+  background-color: blue;
+  border: 5px black;
+} */
+
+/* Fill the box
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  border: dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-1 {
+  width: 100px;
+  height: 100px;
+  border: dashed;
+  background-color: red;
+  transition: all 2s ease;
+}
+.box-1:hover {
+  transform: scale(3);
+} */
+
+/* Hover effect
+.box {
+  width: 400px;
+  height: 400px;
+  background-color: #ff0000;
+  transition: all 1s ease-in;
+}
+.box:hover {
+  background-color: green;
+  transform: rotate(360deg);
+} */
+
+/* Loading
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .round {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    animation: loader 2s linear infinite;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  .delay-1 {
+    animation-delay: 0.2s;
+  }
+  .delay-2 {
+    animation-delay: 0.4s;
+  } */
+  
+  /* Scrolling animation word
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0;
+  }
+  .container {
+    height: 18.5px;
+    display: flex;
+    gap: 5px;
+    overflow: hidden;
+  }
+  
+  .text {
+    animation: moveup 3s ease infinite;
+  }
+  @keyframes moveup {
+    0% {
+      transform: translateY(0%);
+    }
+    25% {
+      transform: translateY(-100%);
+    }
+    50% {
+      transform: translateY(-200%);
+    }
+    75% {
+      transform: translateY(-300%);
+    }
+    100% {
+      transform: translateY(-400%);
+    }
+  }
+  
+  .text-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  

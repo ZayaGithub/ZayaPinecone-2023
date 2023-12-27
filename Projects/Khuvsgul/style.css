@@ -1,0 +1,235 @@
+.body {
+  margin: 0;
+  background-color: gray;
+}
+@media only screen and (max-width: 500px) {
+  .body {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+.navbar p {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.navbar img {
+  width: 100vw;
+}
+.container {
+  margin-left: 120px;
+  margin-right: 122px;
+}
+.container h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 80px;
+  font-family: "Montserrat" sans-serif;
+}
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.center-flex{
+  display: flex;
+  margin-top: 200px;
+  margin-left: 120px;
+  margin-right: 122px;
+}
+.column-1 {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+.column-1 h3 {
+  font-family: "Montserret" sans-serif;
+  font-size: 48px;
+  margin-top: 15px;
+}
+.column-2 {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+@media only screen and (max-width: 500px) {
+  .body {
+    display: none;
+  }
+}
+.column-2 img {
+  transition: 5s ease-in-out;
+}
+
+.list-item{
+  width: 400px;
+  height: 85px;
+}
+.list-item p {
+  float: right;
+  text-align: center;
+  text-align: end;
+}
+.column-2{
+  display: none;
+}
+
+.list-item :hover{
+  background-color: black;
+}
+.list-item button :nth-child(1):hover .column-2 img:nth-child(1){
+  display: block;
+  cursor: pointer;
+}
+.list-item button :nth-child(2):hover ~ .column-2 img :nth-child(2){
+  display: block;
+}
+.list-item button :nth-child(3):hover ~ .column-2 img :nth-child(3){
+  display: block;
+}
+.list-item button :nth-child(4):hover ~ .column-2 img :nth-child(4){
+  display: block;
+}
+.list-item button :nth-child(5):hover ~ .column-2 img :nth-child(5){
+  display: block;
+}
+.list-item button :nth-child(6):hover ~ .column-2 img :nth-child(6){
+  display: block;
+}
+
+
+.list-item button {
+  float: left;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  width: 400px;
+  height: 85px;
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 20px;
+  width: 50%;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+
+.list-item {
+  width: 50vw;
+  height: 100vh;
+  border: 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 50px
+}
+
+.list-item p {
+  font-size: 18px;
+}
+.place {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.last-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+.price {
+  display: flex;
+  justify-content: center;
+}
+
+h4 {
+  font-size: 48px;
+  margin-top: 0;
+}
+
+.price {
+  background-color: white;
+  border-radius: 5px;
+  gap: 40px;
+}
+
+h6 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+ul {
+  font-size: 25px;
+}
+
+.price-1 img {
+  padding: 20px;
+  margin-bottom: 50px;
+  margin-left: 70px;
+}
+.price-2 img {
+  padding: 20px;
+  margin-bottom: 80px;
+  margin-left: 70px;
+}
+.price-1 {
+  width: 308px;
+  height: 373px;
+  background-color: lightgray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-2 {
+  width: 308px;
+  height: 373px;
+  background-color: lightgray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order {
+  background-color: #171717;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.h7 {
+  font-size: 32px;
+  margin-top: 40px;
+}
+.button {
+  background-color: green;
+  width: 100px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.last {
+  background-color: black;
+}
+.last img {
+  margin-top: 80px;
+  display: flex;
+  opacity: 0;
+}
