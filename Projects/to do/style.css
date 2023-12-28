@@ -15,11 +15,11 @@ body {
   margin: auto;
 }
 .boards {
+  display: flex;
   padding: 120px 0px;
   gap: 16px;
-  display: flex;
 }
-.board-flex {
+.board {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -28,14 +28,22 @@ body {
   padding: 8px;
   border-radius: 8px;
 }
-.b-header {
+.flex {
   display: flex;
+}
+
+.b-header {
+  
 }
 .add-card {
-  display: flex;
+  
+}
+.cards {
+  width: 200px;
+  border: 1px solid gray;
 }
 .card {
-  display: flex;
+  
   justify-content: space-between;
   background: white;
   border-radius: 8px;
@@ -43,6 +51,6 @@ body {
 
 
 
-.show {
+/* .show {
   display: flex;
-}
+} */

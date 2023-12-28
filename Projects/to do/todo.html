@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="boards flex">
+            <div class="baord">
+                <div class="b-header flex">
+                    <h1>To do</h1>
+                    <div class="count" id="todo count">1</div>
+                </div>
+                <div class="cards" class="flex" ondragover="allowDrop(event)" ondrop="drop(event)" id="cards-1">
+                    <div class="card" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <button class="add flex">
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Add card</p>
+                </button>
+            </div>
+            <div class="baord">
+                <div class="b-header flex">
+                    <h1>In progress</h1>
+                    <div class="count" id="todo count">1</div>
+                </div>
+                <div class="cards" class="flex" ondragover="allowDrop(event)" ondrop="drop(event)" id="cards-1">
+                    <div class="card" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <button class="add flex">
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Add card</p>
+                </button>
+            </div>
+            <div class="baord">
+                <div class="b-header flex">
+                    <h1>Stuck</h1>
+                    <div class="count" id="todo count">1</div>
+                </div>
+                <div class="cards" class="flex" ondragover="allowDrop(event)" ondrop="drop(event)" id="cards-1">
+                    <div class="card" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <button class="add flex">
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Add card</p>
+                </button>
+            </div>
+            <div class="baord">
+                <div class="b-header flex">
+                    <h1>Done</h1>
+                    <div class="count" id="todo count">1</div>
+                </div>
+                <div class="cards" class="flex" ondragover="allowDrop(event)" ondrop="drop(event)" id="cards-1">
+                    <div class="card" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <button class="add flex">
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Add card</p>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>
