@@ -33,23 +33,18 @@ body {
 }
 
 .b-header {
-  
 }
 .add-card {
-  
 }
 .cards {
   width: 200px;
   border: 1px solid gray;
 }
 .card {
-  
   justify-content: space-between;
   background: white;
   border-radius: 8px;
 }
-
-
 
 /* .show {
   display: flex;
