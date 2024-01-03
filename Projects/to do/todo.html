@@ -19,96 +19,77 @@
         <div class="board">
           <div class="b-header flex">
             <h1>To do</h1>
-            <div class="count">1</div>
+            <div class="count" id="todo-count">1</div>
           </div>
           <div
             class="cards"
-            draggable="true"
+            ondragstart="drag(event)"
             ondragover="allowDrop(event)"
             ondrop="drop(event)"
             draggable="true"
-            ondragstart="drag(event)"
-            id="cards-1"
-            ;
-          >
-            <div class="done">
-              <i class="fa-solid fa-check"></i>
-            </div>
-          </div>
-          <div class="add flex">
-            <i class="fa-solid fa-plus"></i>
-            <p>Add card</p>
-          </div>
-        </div>
-        <div class="board">
-          <div class="b-header flex">
-            <h1>To do</h1>
-            <div class="count">1</div>
-          </div>
-          <div
-            class="cards"
-            ondragover="allowDrop(event)"
-            ondrop="drop(event)"
-            draggable="true"
-            ondragstart="drag(event)"
-            id="cards-2"
+            id="todo"
             ;
           ></div>
-          <div class="add flex" onclick="show()">
+          <div class="add-btn flex" onclick="show()" id="add-todo-btn">
             <i class="fa-solid fa-plus"></i>
-            <p>Add card</p>
+            <div>Add card</div>
           </div>
         </div>
         <div class="board">
           <div class="b-header flex">
-            <h1>To do</h1>
-            <div class="count">1</div>
+            <h1>In progress</h1>
+            <div class="count" id="inprogress-count">1</div>
           </div>
           <div
             class="cards"
+            ondragstart="drag(event)"
             ondragover="allowDrop(event)"
             ondrop="drop(event)"
             draggable="true"
-            ondragstart="drag(event)"
-            id="cards-3"
+            id="inprogress"
             ;
-          >
-            <div
-              class="card flex"
-              draggable="true"
-              ondragstart="drag(event)"
-              id="card-3"
-            ></div>
-          </div>
-          <div class="add flex">
+          ></div>
+          <div class="add-btn flex" onclick="show()" id="add-inprogress-btn">
             <i class="fa-solid fa-plus"></i>
-            <p>Add card</p>
+            <div>Add card</div>
           </div>
         </div>
         <div class="board">
           <div class="b-header flex">
-            <h1>To do</h1>
-            <div class="count">1</div>
+            <h1>Stuck</h1>
+            <div class="count" id="stuck-count">1</div>
           </div>
           <div
             class="cards"
+            ondragstart="drag(event)"
             ondragover="allowDrop(event)"
             ondrop="drop(event)"
             draggable="true"
-            ondragstart="drag(event)"
-            id="cards-4"
+            id="stuck"
             ;
-          >
-            <div
-              class="card flex"
-              draggable="true"
-              ondragstart="drag(event)"
-              id="card-4"
-            ></div>
-          </div>
-          <div class="add flex">
+          ></div>
+          <div class="add-btn flex" onclick="show()" id="add-stuck-btn">
             <i class="fa-solid fa-plus"></i>
-            <p>Add card</p>
+            <div>Add card</div>
+          </div>
+        </div>
+        <div class="board">
+          <div class="b-header flex">
+            <h1>Done</h1>
+            <div class="count" id="done-count">1</div>
+          </div>
+          <div
+            class="cards"
+            ondragstart="drag(event)"
+            ondragover="allowDrop(event)"
+            ondrop="drop(event)"
+            draggable="true"
+            id="done"
+            ;
+          ></div>
+          <div class="add-btn flex" onclick="show()" id="add-done-btn">
+            <i class="fa-solid fa-plus"></i>
+            <div>Add card</div>
           </div>
         </div>
       </div>
@@ -124,6 +105,7 @@
           <p>priority</p>
           <input type="text" id="priority-input" />
           <button onclick="addTodo()">Add task</button>
+          <button onclick="hide()">hide</button>
         </div>
       </div>
     </div>
