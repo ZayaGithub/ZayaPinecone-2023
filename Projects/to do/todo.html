@@ -95,17 +95,33 @@
       </div>
       <div class="modalContainer">
         <div class="modal">
-          <h2>Add Task</h2>
-          <p>title</p>
-          <input type="text" id="title-input" />
-          <p>description</p>
-          <input type="text" id="description-input" />
-          <p>status</p>
-          <input type="text" id="status-input" />
-          <p>priority</p>
-          <input type="text" id="priority-input" />
+          <h3>Add task</h3>
+          <div>
+            <p>Title</p>
+            <input type="text" id="title-input"/>
+          </div>
+          <div>
+            <p>Description</p>
+            <input type="text" id="description-input" height="100px"/>
+          </div>
+          <div>
+            <p>Status</p>
+            <select name="status" id="status-select">
+              <option value="todo">To do</option>
+              <option value="inprogress">In progress</option>
+              <option value="stuck">Stuck</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div>
+            <p>Priority</p>
+            <select name="priority" id="priority-select">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
           <button onclick="addTodo()">Add task</button>
-          <button onclick="hide()">hide</button>
         </div>
       </div>
     </div>

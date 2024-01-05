@@ -8,8 +8,6 @@ const inpCards = document.getElementById("inprogress");
 const stuckCards = document.getElementById("stuck");
 const doneCards = document.getElementById("doen");
 
-const addBtn = document.getElementsByClassName("add-btn");
-
 function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
   document.todoCount.innerHTML = -1;
@@ -34,6 +32,23 @@ function drop(event) {
   const cardId = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(cardId));
 }
+
+let data = [
+  {
+    id: uid(),
+    status: "todo",
+    title: "Todo",
+    priority: "High",
+    description: "This is a todo card",
+  },
+  {
+    id: uid(),
+    status: "inprogress",
+    title: "Todo",
+    priority: "High",
+    description: "This is a todo card",
+  },
+];
 const boxArray = [];
 
 const render = () => {
@@ -141,31 +156,50 @@ const addTodo = () => {
   const titleInputValue = document.getElementById("title-input").value;
   const descriptionInputValue =
     document.getElementById("description-input").value;
-  const statusInputValue = document.getElementById("status-input").value;
-  const priorityInputValue = document.getElementById("priority-input").value;
+  const statusInputValue = document.getElementById("status-select").value;
+  const priorityInputValue = document.getElementById("priority-select").value;
   const inputObj = {
     title: titleInputValue,
     Description: descriptionInputValue,
     Status: statusInputValue,
     Priority: priorityInputValue,
   };
-  boxArray.push(inputObj);
+  cards.push(inputObj);
   render();
 };
 
 const show = () => {
   document.getElementsByClassName("modalContainer")[0].classList.add("show");
 };
+const addBtn = document.getElementsByClassName("add-btn");
 
-const hide = () => {
-  document.getElementsByClassName("modalContainer")[0].classList.remove("show");
+const add = () => {
+  alert(show);
 }
 
-const modalContainer = document.getElementsByClassName("modolContainer")[0];
-window.onclick = function(event) {
-  console.log(event.target);
-    if (event.target == modalContainer) {
-      console.log(event.target, "====", modalContainer);
-      modalContainer.classList.remove("show");
-    } 
-};
+addBtn.addEventListener("click", add);
+
+
+// const hide = () => {
+//   document.getElementsByClassName("modalContainer")[0].classList.remove("show");
+// }
+
+// const modalContainer = document.getElementsByClassName("modolContainer")[0];
+
+// window.onclick = function(event) {
+//   console.log(event.target);
+//     if (event.target == modalContainer) {
+//       console.log(event.target, "====", modalContainer);
+//       modalContainer.classList.remove("show");
+//     } 
+// };
+
+// document.querySelector(".away").addEventListener("click", () => {
+//   document.querySelector(".backdrop").classList.remove("active");
+// });
+
+// document.querySelectorAll(".add-btn").forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     document.querySelector(".backdrop").classList.add("active");
+//   });
+// });
