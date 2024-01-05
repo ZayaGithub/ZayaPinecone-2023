@@ -29,7 +29,9 @@
             draggable="true"
             id="todo"
             ;
-          ></div>
+          >
+            <div class="card"></div>
+          </div>
           <div class="add-btn flex" onclick="show()" id="add-todo-btn">
             <i class="fa-solid fa-plus"></i>
             <div>Add card</div>
@@ -48,7 +50,9 @@
             draggable="true"
             id="inprogress"
             ;
-          ></div>
+          >
+            <div class="card"></div>
+          </div>
           <div class="add-btn flex" onclick="show()" id="add-inprogress-btn">
             <i class="fa-solid fa-plus"></i>
             <div>Add card</div>
@@ -67,7 +71,9 @@
             draggable="true"
             id="stuck"
             ;
-          ></div>
+          >
+            <div class="card"></div>
+          </div>
           <div class="add-btn flex" onclick="show()" id="add-stuck-btn">
             <i class="fa-solid fa-plus"></i>
             <div>Add card</div>
@@ -86,7 +92,9 @@
             draggable="true"
             id="done"
             ;
-          ></div>
+          >
+            <div class="card" id="done-card"></div>
+          </div>
           <div class="add-btn flex" onclick="show()" id="add-done-btn">
             <i class="fa-solid fa-plus"></i>
             <div>Add card</div>
@@ -98,11 +106,11 @@
           <h3>Add task</h3>
           <div>
             <p>Title</p>
-            <input type="text" id="title-input"/>
+            <input type="text" id="title-input" />
           </div>
           <div>
             <p>Description</p>
-            <input type="text" id="description-input" height="100px"/>
+            <input type="text" id="description-input" height="100px" />
           </div>
           <div>
             <p>Status</p>
@@ -121,10 +129,10 @@
               <option value="high">High</option>
             </select>
           </div>
-          <button onclick="addTodo()">Add task</button>
+          <button onclick="addTodo(), hide()">Add task</button>
         </div>
       </div>
     </div>
-    <script src="todo.js"></script>
+    <script src="./todo.js"></script>
   </body>
 </html>
