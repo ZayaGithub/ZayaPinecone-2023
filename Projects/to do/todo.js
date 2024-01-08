@@ -6,14 +6,15 @@ const doneCount = document.getElementById("done-count");
 const todoCards = document.getElementById("todo");
 const inpCards = document.getElementById("inprogress");
 const stuckCards = document.getElementById("stuck");
-const doneCards = document.getElementById("doen");
+const doneCards = document.getElementById("done");
 
 function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
-  document.todoCount.innerHTML = -1;
-  document.inpCount.innerHTML = -1;
-  document.stuckCount.innerHTML = -1;
-  document.doneCount.innerHTML = -1;
+  document.todoCount.innerHTML = todoCards.length;
+  document.inpCount.innerHTML = inpCards.length;
+  document.stuckCount.innerHTML = stuckCards.length;
+  document.doneCount.innerHTML = doneCards.length;
+  ``;
 }
 
 function dragEnd(event) {
@@ -23,135 +24,154 @@ function dragEnd(event) {
   document.doneCount.innerHTML = +1;
 }
 
+const modalContainer =
+        document.getElementsByClassName("modalContainer")[0];
+      window.onclick = function (event) {
+        if (event.target == modalContainer) {
+          //
+          console.log(event.target, "=====", modalContainer);
+          modalContainer.classList.remove("show");
+        }
+      };
+
 function allowDrop(event) {
   event.preventDefault();
 }
 
 function drop(event) {
   event.preventDefault();
-  const cardId = event.dataTransfer.getData("text");
-  event.target.appendChild(document.getElementById(cardId));
+  const cardsId = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(cardsId));
 }
 
-let data = [
-  {
-    id: uid(),
-    status: "todo",
-    title: "Todo",
-    priority: "High",
-    description: "This is a todo card",
-  },
-  {
-    id: uid(),
-    status: "inprogress",
-    title: "Todo",
-    priority: "High",
-    description: "This is a todo card",
-  },
-];
+// let data = [
+//   {
+//     id: "hello",
+//     status: "todo",
+//     title: "Todo",
+//     priority: "High",
+//     description: "This is a todo card",
+//   },
+//   {
+//     id: "hello",
+//     status: "inprogress",
+//     title: "Todo",
+//     priority: "High",
+//     description: "This is a todo card",
+//   },
+// ];
 const boxArray = [];
 
 const render = () => {
-  let todoElelmets = "";
+  let todoElements = "";
   let inprogressElements = "";
-  let stuckElelments = "";
+  let stuckElements = "";
   let doneElements = "";
-
-  const filteredTodo = boxArray.filter((el, i) => el.status === todoCards);
-  const filteredInprogress = boxArray.filter((el, i) => el.status === inpCards);
-  const filteredStuck = boxArray.filter((el, i) => el.status === stuckCards);
-  const filteredDone = boxArray.filter((el, i) => el.status === doneCards);
+  const filteredTodo = boxArray.filter((el, i) => el.status === "todo");
+  const filteredInprogress = boxArray.filter(
+    (el, i) => el.status === "inprogress"
+  );
+  const filteredStuck = boxArray.filter((el, i) => el.status === "stuck");
+  const filteredDone = boxArray.filter((el, i) => el.status === "done");
 
   filteredTodo.forEach((el, i) => {
-    todoElelmets += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${
-      el.title + i
-    }">
+    console.log(el);
+    todoElements = `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+        <div class="done circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
         <p>${el.status}</p>
         <p>${el.description}</p>
         <p>${el.title}</p>
         <p>${el.priority}</p>
 
         <div class="action-buttons">
-        <div class="remove circle">
-          <img src="./x.png" alt="" />
-        </div>
-        <div class="edit circle">
-          <img src="./editicon.png" alt="" />
-        </div>
+          <div class="remove circle">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="edit circle">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
         </div>
    
   </div>`;
   });
 
   filteredInprogress.forEach((el, i) => {
-    todoElelmets += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${
-      el.title + i
-    }">
+    inprogressElements += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+        <div class="done circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
         <p>${el.status}</p>
         <p>${el.description}</p>
         <p>${el.title}</p>
         <p>${el.priority}</p>
 
         <div class="action-buttons">
-        <div class="remove circle">
-          <img src="./x.png" alt="" />
-        </div>
-        <div class="edit circle">
-          <img src="./editicon.png" alt="" />
-        </div>
+          <div class="remove circle">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="edit circle">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
         </div>
    
   </div>`;
   });
 
   filteredStuck.forEach((el, i) => {
-    todoElelmets += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${
-      el.title + i
-    }">
+    stuckElements += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+        <div class="done circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
         <p>${el.status}</p>
         <p>${el.description}</p>
         <p>${el.title}</p>
         <p>${el.priority}</p>
 
         <div class="action-buttons">
-        <div class="remove circle">
-          <img src="./x.png" alt="" />
-        </div>
-        <div class="edit circle">
-          <img src="./editicon.png" alt="" />
-        </div>
+          <div class="remove circle">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="edit circle">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
         </div>
    
   </div>`;
   });
 
   filteredDone.forEach((el, i) => {
-    todoElelmets += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${
-      el.title + i
-    }">
+    doneElements += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+        <div class="done circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
         <p>${el.status}</p>
         <p>${el.description}</p>
         <p>${el.title}</p>
         <p>${el.priority}</p>
 
         <div class="action-buttons">
-        <div class="remove circle">
-          <img src="./x.png" alt="" />
-        </div>
-        <div class="edit circle">
-          <img src="./editicon.png" alt="" />
-        </div>
+          <div class="remove circle">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="edit circle">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
         </div>
    
   </div>`;
   });
-  todoCards.innerHTML = todoElelmets;
+  todoCards.innerHTML = todoElements;
   inpCards.innerHTML = inprogressElements;
-  stuckCards.innerHTML = stuckElelments;
+  stuckCards.innerHTML = stuckElements;
   doneCards.innerHTML = doneElements;
 };
 render();
-
 const addTodo = () => {
   const titleInputValue = document.getElementById("title-input").value;
   const descriptionInputValue =
@@ -160,39 +180,28 @@ const addTodo = () => {
   const priorityInputValue = document.getElementById("priority-select").value;
   const inputObj = {
     title: titleInputValue,
-    Description: descriptionInputValue,
-    Status: statusInputValue,
-    Priority: priorityInputValue,
+    description: descriptionInputValue,
+    status: statusInputValue,
+    priority: priorityInputValue,
   };
-  cards.push(inputObj);
+  boxArray.push(inputObj);
+  console.log(boxArray);
   render();
 };
 
 const show = () => {
   document.getElementsByClassName("modalContainer")[0].classList.add("show");
 };
-const addBtn = document.getElementsByClassName("add-btn");
 
-const add = () => {
-  alert(show);
-}
-
-addBtn.addEventListener("click", add);
-
-
-// const hide = () => {
-//   document.getElementsByClassName("modalContainer")[0].classList.remove("show");
-// }
+const hide = () => {
+  document.getElementsByClassName("modalContainer")[0].classList.remove("show");
+};
 
 // const modalContainer = document.getElementsByClassName("modolContainer")[0];
 
-// window.onclick = function(event) {
-//   console.log(event.target);
-//     if (event.target == modalContainer) {
-//       console.log(event.target, "====", modalContainer);
+// window.onclick () => {
 //       modalContainer.classList.remove("show");
-//     } 
-// };
+//     }
 
 // document.querySelector(".away").addEventListener("click", () => {
 //   document.querySelector(".backdrop").classList.remove("active");
@@ -203,5 +212,8 @@ addBtn.addEventListener("click", add);
 //     document.querySelector(".backdrop").classList.add("active");
 //   });
 // });
+<<<<<<< HEAD
 
 //yuch hiij chadsangue
+=======
+>>>>>>> 91b63e313333c786dd2960834f3bdb008ea49088

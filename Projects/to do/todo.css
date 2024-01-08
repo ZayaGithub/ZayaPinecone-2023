@@ -31,15 +31,23 @@ body {
   display: flex;
 }
 .cards {
+  flex-direction: row;
+  background: white;
   border-radius: 8px;
   gap: 8px;
   justify-content: space-around;
   padding: 8px;
 }
 .card {
+  flex-direction: row;
   background: white;
   border-radius: 8px;
+  flex-direction: column;
 }
+.circle {
+  border-radius: 50%;
+}
+
 .add-btn {
     align-items: center;
     gap: 8px;
@@ -108,3 +116,4 @@ button {
 .show {
   display: flex;
 }
+
