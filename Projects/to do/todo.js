@@ -10,10 +10,10 @@ const doneCards = document.getElementById("done");
 
 function drag(event) {
   event.dataTransfer.setData("text", event.target.id);
-  document.todoCount.innerHTML = todoCards.length;
-  document.inpCount.innerHTML = inpCards.length;
-  document.stuckCount.innerHTML = stuckCards.length;
-  document.doneCount.innerHTML = doneCards.length;
+  // document.todoCount.innerHTML = todoCards.length;
+  // document.inpCount.innerHTML = inpCards.length;
+  // document.stuckCount.innerHTML = stuckCards.length;
+  // document.doneCount.innerHTML = doneCards.length;
   ``;
 }
 
@@ -76,90 +76,90 @@ const render = () => {
 
   filteredTodo.forEach((el, i) => {
     console.log(el);
-    todoElements = `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
-        <div class="done circle">
-          <i class="fa-solid fa-check"></i>
-        </div>
+    todoElements = `<div style="display: flex;" class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+    <div style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px; border: 1px solid grey; border-radius: 50%;" class="done circle">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div style="display: flex; flex-direction: column; width:60%; gap: 5px;">
+      <p style="margin: 0; display: none;">${el.status}</p>
+      <h4 style="margin: 0;">${el.title}</h4>
+      <p>${el.description}</p>
+      <p style="border: 1px solid gray; border-radius: 5px; padding:3px;">${el.priority}</p>
+    </div>
+    <div class="action-buttons">
+      <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="remove circle">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="edit circle">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </div>
+    </div>
 
-        <p>${el.status}</p>
-        <p>${el.description}</p>
-        <p>${el.title}</p>
-        <p>${el.priority}</p>
-
-        <div class="action-buttons">
-          <div class="remove circle">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <div class="edit circle">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </div>
-        </div>
-   
-  </div>`;
+</div>`;
   });
 
   filteredInprogress.forEach((el, i) => {
-    inprogressElements += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
-        <div class="done circle">
-          <i class="fa-solid fa-check"></i>
-        </div>
+    inprogressElements += `<div style="display: flex;" class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+    <div style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px; border: 1px solid grey; border-radius: 50%;" class="done circle">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div style="display: flex; flex-direction: column; width:60%; gap: 5px;">
+      <p style="margin: 0; display: none;">${el.status}</p>
+      <h4 style="margin: 0;">${el.title}</h4>
+      <p>${el.description}</p>
+      <p style="border: 1px solid gray; border-radius: 5px; padding:3px;">${el.priority}</p>
+    </div>
+    <div class="action-buttons">
+      <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="remove circle">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="edit circle">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </div>
+    </div>
 
-        <p>${el.status}</p>
-        <p>${el.description}</p>
-        <p>${el.title}</p>
-        <p>${el.priority}</p>
-
-        <div class="action-buttons">
-          <div class="remove circle">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <div class="edit circle">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </div>
-        </div>
-   
-  </div>`;
+</div>`;
   });
 
   filteredStuck.forEach((el, i) => {
-    stuckElements += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
-        <div class="done circle">
-          <i class="fa-solid fa-check"></i>
-        </div>
+    stuckElements += `<div style="display: flex;" class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+    <div style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px; border: 1px solid grey; border-radius: 50%;" class="done circle">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div style="display: flex; flex-direction: column; width:60%; gap: 5px;">
+      <p style="margin: 0; display: none;">${el.status}</p>
+      <h4 style="margin: 0;">${el.title}</h4>
+      <p>${el.description}</p>
+      <p style="border: 1px solid gray; border-radius: 5px; padding:3px;">${el.priority}</p>
+    </div>
+    <div class="action-buttons">
+      <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="remove circle">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="edit circle">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </div>
+    </div>
 
-        <p>${el.status}</p>
-        <p>${el.description}</p>
-        <p>${el.title}</p>
-        <p>${el.priority}</p>
-
-        <div class="action-buttons">
-          <div class="remove circle">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <div class="edit circle">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </div>
-        </div>
-   
-  </div>`;
+</div>`;
   });
 
   filteredDone.forEach((el, i) => {
-    doneElements += `<div class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
-        <div class="done circle">
+    doneElements += `<div style="display: flex;" class="cards" ondragstart="drag(event)" ondragover="allowDrop(event)" draggable="true" ondrop="drop(event)" id="${el.id}">
+        <div style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px; border: 1px solid grey; border-radius: 50%;" class="done circle">
           <i class="fa-solid fa-check"></i>
         </div>
-
-        <p>${el.status}</p>
-        <p>${el.description}</p>
-        <p>${el.title}</p>
-        <p>${el.priority}</p>
-
+        <div style="display: flex; flex-direction: column; width:60%; gap: 5px;">
+          <p style="margin: 0; display: none;">${el.status}</p>
+          <h4 style="margin: 0;">${el.title}</h4>
+          <p>${el.description}</p>
+          <p style="border: 1px solid gray; border-radius: 5px; padding:3px;">${el.priority}</p>
+        </div>
         <div class="action-buttons">
-          <div class="remove circle">
+          <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="remove circle">
             <i class="fa-solid fa-xmark"></i>
           </div>
-          <div class="edit circle">
+          <div style="display: flex; justify-content: center; align-items: center;width: 24px; height: 24px;border: 1px solid grey; border-radius: 50%;"class="edit circle">
             <i class="fa-solid fa-pen-to-square"></i>
           </div>
         </div>
@@ -212,8 +212,3 @@ const hide = () => {
 //     document.querySelector(".backdrop").classList.add("active");
 //   });
 // });
-<<<<<<< HEAD
-
-//yuch hiij chadsangue
-=======
->>>>>>> 91b63e313333c786dd2960834f3bdb008ea49088

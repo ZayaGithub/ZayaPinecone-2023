@@ -57,6 +57,7 @@ body {
 }
 .add-btn :hover {
   background: rgba(0, 0, 0, 0.2);
+
 }
 .modalContainer {
     display: none;
@@ -116,4 +117,8 @@ button {
 .show {
   display: flex;
 }
-
+ h {
+  display: flex;
+  flex-direction: column;
+  
+ }
