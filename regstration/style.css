@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 1400px;
+  padding-top: 100px;
+  
+}
+.card {
+  border: 1px solid gray;
+  width: 390px;
+  height: 551px;
+  border-radius: 10px;
+}
